@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Credentials
+credentials.py
+
+# Weekly reminders
+weekly_reminders.txt
