@@ -1,3 +1,4 @@
+import os
 import logging
 import smtplib, ssl
 from email.mime.multipart import MIMEMultipart
@@ -13,7 +14,7 @@ def email_significant_other():
     message["From"] = credentials.sender_email_credentials["sender_email_address"]
     message["To"] = credentials.recipient_email_credentials["recipient_email_address"]
     message["Subject"] = "Weekly Reminders"
-    with open("weekly_reminders.txt", "r") as weekly_reminders:
+    with open(os.path.abspath("significant-other-reminders/weekly_reminders.txt"), "r") as weekly_reminders:
         text = weekly_reminders.read()
     message_text = MIMEText(text, "plain")
     message.attach(message_text)
